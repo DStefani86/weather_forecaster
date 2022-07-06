@@ -16,58 +16,30 @@
   </head>
   <body>
     <section class="vh-100">
-      <div class="search-container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-md-8 col-lg-6 col-xl-4">
-            <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
-
-            <div class="input-group rounded mb-3">
-              <input
-                id="search-input"
-                type="search"
-                class="search-input form-control rounded"
-                placeholder="City"
-                aria-label="Search"
-                aria-describedby="search-addon"
-              />
-              <a href="#!" id="search-button" type="button">
-                <span
-                  class="input-group-text border-0 fw-bold"
-                  id="search-addon"
-                >
-                  Check!
-                </span>
-              </a>
-            </div>
-
-            <div class="mb-4 pb-2">
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  value="option1"
-                  checked
+      <div class="row">
+    
+          <div class="col-md-4">
+            <input
+                  id="search-input"
+                  type="search"
+                  class="search-input form-control rounded"
+                  placeholder="City"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
                 />
-                <label class="form-check-label" for="inlineRadio1"
-                  >Celsius</label
-                >
-              </div>
-
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  value="option2"
-                />
-                <label class="form-check-label" for="inlineRadio2"
-                  >Farenheit</label
-                >
-              </div>
-            </div>
+                <a href="#!" id="search-button" type="button">
+                  <span
+                    class="input-group-text border-0 fw-bold"
+                    id="search-addon"
+                  >
+                    Check!
+                  </span>
+                </a>
+                <ul id="search-history"></ul>
+          </div>
+          <div class="col-md-8">
+<div id="current-daycast" class="row">Current Day</div>
+<div id="future-daycast" class="row">5 Day Forecast</div>
           </div>
         </div>
       </div>
