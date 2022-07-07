@@ -28,6 +28,7 @@ function searchValue(citySearch) {
       var cityList = document.createElement("li");
       cityList.textContent = data[0].name;
       citiesSearched.appendChild(cityList);
+      citiesSearched.classList.add("historybtn");
       var currentCity = document.createElement("h4");
       currentCity.textContent = data[0].name;
       currentDayCast.appendChild(currentCity);
@@ -103,6 +104,16 @@ function searchValue(citySearch) {
             futureForecast.appendChild(dayContainer);
             dayHead.classList.add("futureheader");
           }
+          historyBtn.addEventListener("click", function (event) {
+            event.preventDefault;
+            searchValue(citySearch);
+            searchInput.value = this.textContent;
+          });
         });
     });
 }
+// historyBtn.addEventListener("click", function (event) {
+//   event.preventDefault;
+//   searchValue(citySearch);
+//   searchInput.value = historyBtn.textContent;
+// });

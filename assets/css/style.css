@@ -11,8 +11,8 @@ header {
   text-align: center;
 }
 .low {
-  background-color: blue;
-  border: solid blue;
+  background-color: lightblue;
+  border: solid lightblue;
   margin-left: 4px;
   font-weight: bolder;
 }
@@ -51,17 +51,25 @@ ul {
 }
 
 .card-body {
+  display: block
   border-radius: ;
 }
 
 .futureheader {
   opacity: 90;
   background-color: lightcoral;
-  border-radius: 30px;
+  border-radius: 20px;
+  
 }
 
 .current-header {
   opacity: 90;
   background-color: lightcoral;
-  border-radius: 30px;
+  border-radius: 20px;
+}
+
+.historybtn {
+  opacity: 90;
+  background-color: lightblue;
+  border-radius: 20px;
 }
