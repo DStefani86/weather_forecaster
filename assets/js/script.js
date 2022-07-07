@@ -42,6 +42,7 @@ function searchValue(citySearch) {
         "&appid=" +
         APIkey +
         "&units=imperial";
+      currentCity.classList.add("current-header");
       fetch(oneCallAPI)
         .then(function (response) {
           return response.json();

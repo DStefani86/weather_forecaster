@@ -51,8 +51,17 @@ ul {
 }
 
 .card-body {
+  border-radius: ;
 }
 
 .futureheader {
-  border: 1px solid;
+  opacity: 90;
+  background-color: lightcoral;
+  border-radius: 30px;
+}
+
+.current-header {
+  opacity: 90;
+  background-color: lightcoral;
+  border-radius: 30px;
 }
