@@ -4,6 +4,7 @@ var buttonInput = document.getElementById("search-button");
 var todayForecast = document.getElementById("current-daycast");
 var futureForecast = document.getElementById("future-daycast");
 var citiesSearched = document.getElementById("search-history");
+var listItem = document.getElementById("li");
 
 buttonInput.addEventListener("click", function (event) {
   event.preventDefault;
@@ -69,6 +70,7 @@ function searchValue(citySearch) {
           UVspan.textContent = "uvindex";
           UVspan.appendChild(UV);
           currentDayCast.appendChild(temperature);
+
           currentDayCast.appendChild(humidity);
           currentDayCast.appendChild(wind);
           currentDayCast.appendChild(UVspan);
@@ -99,21 +101,17 @@ function searchValue(citySearch) {
             dayHead.textContent = normalTime;
             dayContainer.appendChild(dayHead);
             dayContainer.appendChild(dayTemp);
+            dayContainer.appendChild(dayImg);
             dayContainer.appendChild(dayHumidity);
             dayContainer.appendChild(dayWind);
             futureForecast.appendChild(dayContainer);
             dayHead.classList.add("futureheader");
           }
-          historyBtn.addEventListener("click", function (event) {
+          citiesSearched.addEventListener("click", function (event) {
             event.preventDefault;
             searchValue(citySearch);
-            searchInput.value = this.textContent;
+            searchInput.value = cityList.listItem.textContent;
           });
         });
     });
 }
-// historyBtn.addEventListener("click", function (event) {
-//   event.preventDefault;
-//   searchValue(citySearch);
-//   searchInput.value = historyBtn.textContent;
-// });

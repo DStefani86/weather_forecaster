@@ -52,13 +52,15 @@ ul {
 
 .card-body {
   display: block
-  border-radius: ;
+  border: solid black;
+  border-radius: 20px;
 }
 
 .futureheader {
   opacity: 90;
   background-color: lightcoral;
   border-radius: 20px;
+  border: solid black;
   
 }
 
@@ -66,10 +68,16 @@ ul {
   opacity: 90;
   background-color: lightcoral;
   border-radius: 20px;
+  border: solid black;
 }
 
 .historybtn {
   opacity: 90;
   background-color: lightblue;
   border-radius: 20px;
+  border: solid black;
+}
+
+#search-button {
+  margin-bottom: 20px;
 }
