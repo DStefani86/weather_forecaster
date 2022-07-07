@@ -12,7 +12,7 @@ buttonInput.addEventListener("click", function (event) {
   searchInput.value = "";
 });
 function searchValue(citySearch) {
-  var APIkey = "d9bce79fe872e513ee7b58c79fd85200";
+  var APIkey = "ec4454c54b0c8e18793fbf66b902c62d";
   var geoLocation =
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
     citySearch +
@@ -59,9 +59,9 @@ function searchValue(citySearch) {
           } else {
             UV.classList.add("high");
           }
-          temperature.textContent = data.current.temp;
-          humidity.textContent = data.current.humidity;
-          wind.textContent = data.current.wind_speed;
+          temperature.textContent = "Temp:" + data.current.temp;
+          humidity.textContent = "Hum:" + data.current.humidity;
+          wind.textContent = "Wind:" + data.current.wind_speed;
           UV.textContent = data.current.uvi;
           var UVspan = document.createElement("p");
           UVspan.textContent = "uvindex";
@@ -91,32 +91,17 @@ function searchValue(citySearch) {
             );
             var currentUni = new Date(data.daily[i].dt * 1000);
             var normalTime = currentUni.toLocaleString();
-            dayTemp.textContent = data.daily[i].temp.max;
-            dayHumidity.textContent = data.daily[i].humidity;
-            dayWind.textContent = data.daily[i].wind_speed;
+            dayTemp.textContent = "Temp:" + data.daily[i].temp.max;
+            dayHumidity.textContent = "Hum:" + data.daily[i].humidity;
+            dayWind.textContent = "Wind:" + data.daily[i].wind_speed;
             dayHead.textContent = normalTime;
             dayContainer.appendChild(dayHead);
             dayContainer.appendChild(dayTemp);
             dayContainer.appendChild(dayHumidity);
             dayContainer.appendChild(dayWind);
             futureForecast.appendChild(dayContainer);
+            dayHead.classList.add("futureheader");
           }
         });
     });
 }
-
-// {
-//   /* <div class="card shadow-0 border">
-//               <div class="card-body p-4">
-//                 <h4 class="mb-1 sfw-normal">City:</h4>
-//                 <p class="mb-2">Current temperature: <strong>3.644</strong></p>
-//                 <p>Feels like: <strong>4.37°C</strong></p>
-//                 <p>Max: <strong>5.325</strong>, Min: <strong>6.3653</strong></p>
-
-//                 <div class="d-flex flex-row align-items-center">
-//                   <p class="mb-0 me-4">Scattered Clouds</p>
-//                   <i class="fas fa-cloud fa-3x" style="color: #eee"></i>
-//                 </div>
-//               </div>
-//             </div> */
-// }

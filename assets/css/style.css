@@ -1,11 +1,58 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+header {
+  height: 50px;
+  background-color: lightcoral;
+  font-weight: bolder;
+  font-size: xx-large;
+  text-align: center;
+}
 .low {
   background-color: blue;
+  border: solid blue;
+  margin-left: 4px;
+  font-weight: bolder;
 }
 
 .med {
   background-color: yellow;
+  border: solid yellow;
+  margin-left: 4px;
+  font-weight: bolder;
 }
 
 .high {
-  background-color: red;
+  background-color: orangered;
+  border: solid orangered;
+  margin-left: 4px;
+  font-weight: bolder;
+}
+
+.row {
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.search-bar {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  margin-top: 10px;
+  background-color: lightgrey;
+}
+
+ul {
+  list-style: none;
+}
+
+.card-body {
+}
+
+.futureheader {
+  border: 1px solid;
 }
