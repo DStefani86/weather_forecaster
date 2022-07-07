@@ -1,3 +1,4 @@
+//declaring my global variables
 var currentTime = moment().format("X");
 var searchInput = document.getElementById("search-input");
 var buttonInput = document.getElementById("search-button");
@@ -6,12 +7,14 @@ var futureForecast = document.getElementById("future-daycast");
 var citiesSearched = document.getElementById("search-history");
 var listItem = document.getElementById("li");
 
+//event listener for search input value
 buttonInput.addEventListener("click", function (event) {
   event.preventDefault;
   var citySearch = searchInput.value;
   searchValue(citySearch);
   searchInput.value = "";
 });
+//fetching information from API's to return lat and long data.
 function searchValue(citySearch) {
   var APIkey = "ec4454c54b0c8e18793fbf66b902c62d";
   var geoLocation =
@@ -45,6 +48,7 @@ function searchValue(citySearch) {
         APIkey +
         "&units=imperial";
       currentCity.classList.add("current-header");
+      //separate API call for alternative attributes I'm using
       fetch(oneCallAPI)
         .then(function (response) {
           return response.json();
@@ -55,6 +59,7 @@ function searchValue(citySearch) {
           var humidity = document.createElement("p");
           var wind = document.createElement("p");
           var UV = document.createElement("span");
+          //if the numeric value from the UV Index is above or below a certain point the background color will change accordingly
           if (data.current.uvi < 2) {
             UV.classList.add("low");
           } else if (data.current.uvi >= 2 && data.current.uvi < 8) {
@@ -68,6 +73,7 @@ function searchValue(citySearch) {
           UV.textContent = data.current.uvi;
           var UVspan = document.createElement("p");
           UVspan.textContent = "uvindex";
+          //appending the children to the card i created to display on the page
           UVspan.appendChild(UV);
           currentDayCast.appendChild(temperature);
 
@@ -76,6 +82,7 @@ function searchValue(citySearch) {
           currentDayCast.appendChild(UVspan);
           todayForecast.appendChild(currentDayCast);
           futureForecast.innerHTML = "";
+          //for loop to stop my forecast at 5 days
           for (i = 1; i < 6; i++) {
             var dailyContainer = document.createElement("div");
             dailyContainer.classList.add("card");
@@ -107,6 +114,7 @@ function searchValue(citySearch) {
             futureForecast.appendChild(dayContainer);
             dayHead.classList.add("futureheader");
           }
+          //another event listener to call back the search history
           citiesSearched.addEventListener("click", function (event) {
             event.preventDefault;
             searchValue(citySearch);
